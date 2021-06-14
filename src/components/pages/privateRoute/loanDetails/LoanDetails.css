@@ -1,0 +1,203 @@
+.loan-details-background-image {
+    background-image: url("../../../../images/LoanDetails.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center center;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    position: relative;
+    top: 82px;
+    left: 0;
+}
+
+.loan-details-form-container {
+    border: 2px #182130 solid;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: whitesmoke;
+    color: #182130;
+    width: 55%;
+    margin-left: -0.5rem;
+    padding: 1.9rem 1.9rem;
+    border-radius: 0.6rem;
+    box-shadow: 0.5rem 0.5rem 3.8rem #000;
+}
+
+.loan-details-form-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loan-details-form-item input {
+    padding: 0.6rem 0.8rem;
+    background-color: whitesmoke;
+    color: #182130;
+    outline: none;
+    margin: 0 0 1rem 0;
+    text-align: right;
+    border: 2px #182130 solid;
+    min-width: 30%;
+    max-width: 65%;
+}
+
+.loan-details-form-item input::placeholder {
+    font-size: 0.8rem;
+}
+
+label {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 0 0 2rem 0;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+.range-slider {
+    margin: 0.5rem 0 1rem 0;
+    font-size: 0.9rem;
+}
+
+input[type='range'] {
+    overflow: hidden;
+    -webkit-appearance: none;
+    background-color: #182130;
+  }
+
+input[type='range']::-webkit-slider-runnable-track {
+    color: #182130;
+    background-color: whitesmoke;
+    -webkit-appearance: none;
+}
+
+.loan-details-button {
+    display: flex;
+    padding: 1.15rem 2.25rem;
+    color: whitesmoke;
+    margin: 1rem auto auto auto;
+    font-size: 1rem;
+    transition: all .7s;
+    position: relative;
+    overflow: hidden;
+    background-color: #182130;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+}
+
+.loan-details-button:hover {
+    color: #182130;
+    background-color: whitesmoke;
+    border: 3px #182130 solid;
+}
+
+.loan-details-logout-button {
+    display: flex;
+    margin: auto;
+    padding: 0.95rem 2.05rem;
+    color: #182130;
+    margin: 1rem auto auto auto;
+    font-size: 1rem;
+    transition: all .7s;
+    position: relative;
+    overflow: hidden;
+    background-color: whitesmoke;
+    cursor: pointer;
+    font-weight: bold;
+    border: 3px #182130 solid;
+}
+
+.loan-details-loan-button {
+    display: flex;
+    margin: auto;
+    padding: 1.35rem 2.45rem;
+    color: whitesmoke;
+    font-size: 1rem;
+    transition: all .7s;
+    position: relative;
+    overflow: hidden;
+    background-color: #182130;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+}
+
+.loan-details-error {
+    text-align: center;
+    color: red;
+    font-size: 1.2rem;
+}
+
+.loan-amount-details {
+    font-size: 0.9rem;
+}
+
+@media (min-width: 40rem) {
+    .loan-details-form-container {
+        width: 35%;
+    }
+
+    .loan-details-period {
+        text-align: center;
+    }
+
+    .loan-details-form-item label {
+        text-align: right;
+    }
+
+    .loan-details-form-item input {
+        width: 50%;
+    }
+
+    .loan-details-form-item input::placeholder {
+        font-size: 1rem;
+    }
+
+    .loan-details-form-item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .range-slider {
+        font-size: 1rem;
+    }
+    
+
+    .loan-details-button {
+    font-size: 1.3rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    label {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .loan-details-label {
+        align-self: center;
+    }
+}

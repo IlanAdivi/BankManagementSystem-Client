@@ -1,0 +1,90 @@
+.login-background-image {
+    background-image: url("../../../images/LoginPage.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center center;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    position: relative;
+    top: 82px;
+    left: 0;
+}
+
+.login-form-container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+    width: 65%;
+    margin-left: -0.5rem;
+    padding: 3.1rem 1.9rem;
+    border-radius: 0.6rem;
+    box-shadow: 0.5rem 0.5rem 3.8rem #000;
+}
+
+.login-form-container h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-form-item {
+    text-align: right;
+}
+
+.login-form-item input {
+    width: 95%;
+    padding: 0.6rem;
+    color: #222;
+    border: none;
+    outline: none;
+    margin: 1rem 0 1rem 0;
+    text-align: right;
+}
+
+.login-button {
+    background: black;
+    color: #fff;
+    font-size: 1rem;
+    opacity: .8;
+    transition: opacity .3s ease;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.6rem;
+    cursor: pointer;
+    border-radius: 3.1rem;
+    border: 1px solid #fff;
+}
+
+.login-button:hover {
+    opacity: 1;
+    background: #fff;
+    color: black;
+    border: 1px solid black;
+}
+
+.login-error {
+    text-align: center;
+    color: red;
+    font-size: 1.2rem;
+}
+
+@media (min-width: 40rem) {
+    .login-background-image {
+        padding-top: 0;
+    }
+
+    .login-form-container {
+        width: 380px !important;
+    }
+
+    .login-form-container h1 {
+        font-size: 2rem;
+    }
+
+    .login-button {
+        font-size: 1.2rem;
+    }
+}
