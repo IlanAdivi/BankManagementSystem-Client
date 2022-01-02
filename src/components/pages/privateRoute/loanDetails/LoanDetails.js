@@ -82,11 +82,13 @@ function LoanDetails() {
                         <div className="loan-details-error">{error ? error : null}</div>
                     </div>
                     :
-                    <div className="loan-details-form-container">
+                    <div className="loan-details-success-form-container">
                         <h1 className="modal-title">תהליך לקיחת ההלוואה הסתיים בהצלחה</h1>
                         <h4 className="modal-sub-title">?האם תרצה לקחת הלוואה נוספת או להתנתק</h4>
-                        <button className="loan-details-loan-button" onClick={onClickLoanAgain}>קבל הלוואה נוספת</button>
-                        <button className="loan-details-logout-button" onClick={onClickLogout}>התנתק</button>
+                        <div className='loan-details-success-buttons'>
+                            <button className="loan-details-loan-button" onClick={onClickLoanAgain}>קבל הלוואה נוספת</button>
+                            <button className="loan-details-logout-button" onClick={onClickLogout}>התנתק</button>
+                        </div>
                     </div>}
             </div>
         </div>

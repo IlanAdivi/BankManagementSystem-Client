@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import { fetchUserById, updateUserById } from '../../../../actions';
 import Navbar from '../../../navbar/Navbar';
 import './PersonalDetails.css';
+import { allPropertiesAreEmpty, fillUpdatedUser } from '../../../../utils/propertiesLogic';
 
 function PersonalDetails() {
     const dispatch = useDispatch();
@@ -37,6 +38,12 @@ function PersonalDetails() {
         fetchUserByIdFromAPI(auth.user.unique_name);
     }, [auth.user.unique_name, fetchUserByIdFromAPI]);
 
+    useEffect(() => {
+        if (allPropertiesAreEmpty(updateUser) === true) {
+            fillUpdatedUser(updateUser, user);
+        }
+    }, [user, updateUser]);
+
     const onChange = e => {
         setUpdateUser({
             ...updateUser,
@@ -62,85 +69,109 @@ function PersonalDetails() {
                     className="form-container"
                 >
                     <h1>שלום {firstname} {lastname}, נא השלם את הפרטים הבאים</h1>
-                    <div
-                        className="form-item">
-                        <input
-                            type="text"
-                            name="firstname"
-                            placeholder=":שם פרטי"
-                            readOnly
-                            defaultValue={firstname}
-                        />
+
+                    <div className="form-item-row">
+                        <div className='form-item-column'>
+                            <label className="firstname-label">שם פרטי</label>
+                            <input
+                                type="text"
+                                name="firstname"
+                                placeholder=":שם פרטי"
+                                readOnly
+                                defaultValue={firstname}
+                                className='firstname'
+                            />
+                        </div>
+
+
+
+                        <div className='form-item-column'>
+                            <label className="lastname-label">שם משפחה</label>
+                            <input
+                                type="text"
+                                name="lastname"
+                                placeholder=":שם משפחה"
+                                readOnly
+                                defaultValue={lastname}
+                                className='lastname'
+                            />
+                        </div>
                     </div>
 
-                    <div className="form-item">
-                        <input
-                            type="text"
-                            name="lastname"
-                            placeholder=":שם משפחה"
-                            readOnly
-                            defaultValue={lastname}
-                        />
+                    <div className="form-item-row">
+                        <div className='form-item-column'>
+                            <label className="idNumber-label">תעודת זהות</label>
+                            <input
+                                type="text"
+                                name="idNumber"
+                                placeholder=":תעודת זהות"
+                                readOnly
+                                defaultValue={idNumber}
+                                className='idNumber'
+                            />
+                        </div>
+
+                        <div className='form-item-column'>
+                            <label className="dateOfBirth-label">תאריך לידה</label>
+                            <input
+                                type="date"
+                                placeholder=":תאריך לידה"
+                                defaultValue={user.dateOfBirth ? user.dateOfBirth.slice(0, 10) : null}
+                                onChange={onChange}
+                                name="dateOfBirth"
+                            />
+                        </div>
                     </div>
 
-                    <div className="form-item">
-                        <input
-                            type="text"
-                            name="idNumber"
-                            placeholder=":תעודת זהות"
-                            readOnly
-                            defaultValue={idNumber}
-                        />
+                    <div className="form-item-row">
+                        <div className='form-item-column'>
+                            <label className="label">טלפון</label>
+                            <input
+                                type="text"
+                                name="phoneNumber"
+                                placeholder=":טלפון"
+                                defaultValue={user.phoneNumber}
+                                onChange={onChange}
+                            />
+                        </div>
+
+                        <div className='form-item-column'>
+                            <label className="email-label">דואר אלקטרוני</label>
+                            <input
+                                type="text"
+                                name="email"
+                                placeholder=":דואר אלקטרוני"
+                                defaultValue={user.email}
+                                onChange={onChange}
+                                className='email'
+                            />
+                        </div>
                     </div>
 
-                    <div className="form-item">
-                        <input
-                            type="date"
-                            placeholder=":תאריך לידה"
-                            defaultValue={user.dateOfBirth ? user.dateOfBirth.slice(0, 10) : null}
-                            onChange={onChange}
-                            name="dateOfBirth"
-                        />
-                    </div>
+                    <div className="form-item-row">
+                        <div className='form-item-column'>
+                            <label className="label">שם העסק</label>
+                            <input
+                                type="text"
+                                name="companyName"
+                                placeholder=":שם העסק"
+                                defaultValue={user.companyName}
+                                onChange={onChange}
+                                className='companyName'
+                            />
+                        </div>
 
-                    <div className="form-item">
-                        <input
-                            type="text"
-                            name="phoneNumber"
-                            placeholder=":טלפון"
-                            defaultValue={user.phoneNumber}
-                            onChange={onChange}
-                        />
-                    </div>
-
-                    <div className="form-item">
-                        <input
-                            type="text"
-                            name="email"
-                            placeholder=":דואר אלקטרוני"
-                            defaultValue={user.email}
-                            onChange={onChange}
-                        />
-                    </div>
-
-                    <div className="form-item">
-                        <input
-                            type="text"
-                            name="companyName"
-                            placeholder=":שם העסק"
-                            defaultValue={user.companyName}
-                            onChange={onChange}
-                        />
-                    </div>
-
-                    <div className="form-item">
-                        <input
-                            type="text"
-                            name="companyNumber"
-                            placeholder=":ח.פ/שותפות/עמותה"
-                            defaultValue={user.companyNumber}
-                            onChange={onChange}
-                        />
+                        <div className='form-item-column'>
+                            <label className="companyNumber-label">ח.פ/שותפות/עמותה</label>
+                            <input
+                                type="text"
+                                name="companyNumber"
+                                placeholder=":ח.פ/שותפות/עמותה"
+                                defaultValue={user.companyNumber}
+                                onChange={onChange}
+                                className='companyNumber'
+                            />
+                        </div>
                     </div>
 
                     <button

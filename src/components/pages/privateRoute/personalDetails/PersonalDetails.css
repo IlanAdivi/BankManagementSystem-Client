@@ -3,10 +3,12 @@
     background-repeat:no-repeat;
     background-size: cover;
     background-position:center center fixed;
-    height: 100vh;
+    background-attachment: fixed;
+    min-height: 90vh;
+    max-height: 110vh;
     width: 100vw;
     color: white;
-    position: relative;
+    position: absolute;
     top: 82px;
     left: 0;
 }
@@ -18,7 +20,7 @@
     transform: translate(-50%, -50%);
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
     width: 65%;
-    margin-left: -0.5rem;
+    margin-left: -0.2rem;
     padding: 1.9rem 1.9rem;
     border-radius: 0.6rem;
     box-shadow: 0.5rem 0.5rem 3.8rem #000;
@@ -35,26 +37,26 @@ input {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
     margin-bottom: 0;
 }
 
-.form-item {
+.form-item-column {
     text-align: right;
 }
 
-.form-item input {
-    width: 95%;
+.form-item-column input {
+    width: 90%;
     padding: 0.4rem 0.6rem;
     color: #222;
     border: none;
     outline: none;
-    margin: 1rem 0 1rem 0;
+    margin: 0.7rem 0rem 0.7rem 0rem;
     text-align: right;
 }
 
-.form-item input:read-only {
+.form-item-column input:read-only {
     background-color: gray;
 }
 
@@ -64,12 +66,15 @@ h1 {
     font-size: 1rem;
     opacity: .8;
     transition: opacity .3s ease;
-    width: 100%;
-    margin: 1rem 0;
-    padding: 0.5rem;
+    width: auto;
+    margin: 1rem auto;
+    padding: 0.5rem 0.7rem;
     cursor: pointer;
     border-radius: 3.1rem;
     border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .continue-button:hover {
@@ -87,10 +92,17 @@ h1 {
 @media (min-width: 40rem) {
     .background-image {
         padding-top: 0;
+        position: absolute;
+        min-height: 100vh;
     }
 
     .form-container {
-        width: 480px !important;
+        width: 60%;  
+        top: 45%;
+        margin-left: -0.5rem;
+        padding: 1.9rem 0;
+        border-radius: 0.6rem;
+        box-shadow: 0.5rem 0.5rem 3.8rem #000;
     }
 
     h1 {
@@ -99,5 +111,61 @@ h1 {
 
     .continue-button {
         font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        margin: 0.8rem auto;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .form-item-column input {
+        margin: 0.7rem 0 0.7rem 2.5rem;
+        max-width: 40%;
+        text-align: right;
+    }
+
+    .form-item-column label {
+        font-size: 1.1rem;
+        min-width: 25%;
+        margin-left: 1rem;
+        text-align: right;
+    }
+
+    .form-item-row {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-item-column {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 45%;
+        padding: 0.4rem 0rem;
+        border: none;
+        outline: none;
+        margin: 0;
+        text-align: right;
+    }
+
+    .lastname-label {
+        margin-left: 4rem !important;
+    }
+
+    .dateOfBirth-label {
+        margin-left: 4rem !important;
+    }
+
+    .email-label {
+        margin-left: 3.8rem !important;
+    }
+
+    .companyNumber-label {
+        margin-left: 1.5rem !important;
     }
 }

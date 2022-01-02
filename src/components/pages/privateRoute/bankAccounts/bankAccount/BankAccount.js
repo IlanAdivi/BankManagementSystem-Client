@@ -1,8 +1,8 @@
 import React from 'react';
-import './BankAccounts.css';
+import '../../bankAccounts/BankAccounts.css';
 import Select from 'react-select';
 import { useDispatch } from 'react-redux';
-import { deleteBankAccount } from '../../../../actions';
+import { deleteBankAccount } from '../../../../../actions';
 
 function BankAccount({ bankAccount, styles, bankOptions }) {
     const dispatch = useDispatch();
@@ -30,7 +30,7 @@ function BankAccount({ bankAccount, styles, bankOptions }) {
 
             <div className="bank-account-item-column">
                 <div className="bank-account-type">סניף</div>
-                <input name="branch" defaultValue={bankAccount.branch} readOnly />
+                <input name="branch" className='branch' defaultValue={bankAccount.branch} readOnly />
             </div>
 
             <div className="bank-account-item-column">

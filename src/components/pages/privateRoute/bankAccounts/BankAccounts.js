@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import Select from 'react-select';
 import { addBankAccount, getAllBankAccountsByUserId, getAllBankOptions } from '../../../../actions';
-import BankAccount from './BankAccount';
+import BankAccount from './bankAccount/BankAccount';
 
 function BankAccounts() {
     const history = useHistory();
